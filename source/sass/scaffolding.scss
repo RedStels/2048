@@ -1,0 +1,71 @@
+body {
+  font-size: 1em;
+  line-height: 1em;
+  font-family: $default-font;
+  font-weight: 300;
+  color: black;
+  font-style: normal;
+
+  background-color: $white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  color: white;
+  background-color: #fc8719;
+}
+
+@keyframes fade {
+
+  0% {
+    background-color: #f4841a;
+  }
+
+  100% {
+    background-color: #f4581a;
+  }
+}
+
+@keyframes show {
+
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+
+  100% {
+    width: 100%;
+    height: 95%;
+  }
+}
+
+@keyframes line {
+  0% {
+    width: 30%;
+
+  }
+
+  100% {
+    width: 102%;
+  }
+}
