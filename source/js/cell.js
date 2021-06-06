@@ -1,5 +1,6 @@
 "use strict"
 
+//Содаём класс клетка
 class Cell {
   constructor(fieldElement) {
     this.element = createAndAppend({
@@ -9,10 +10,10 @@ class Cell {
 
 
     if (Math.random() > 0.8) {
-      this.value = Math.random() > 0.5 ? 4 : 2;
+      this.spawn();
     }
 
-    this.element.onclick = this.merge.bind(this);
+    // this.element.onclick = this.merge.bind(this);
   }
 
   get value() {
@@ -21,6 +22,7 @@ class Cell {
 
   set value(value) {
     this.Value = value;
+
     this.element.innerHTML = value == 0 ? "" : value;
   }
 
@@ -28,7 +30,20 @@ class Cell {
     this.value = "";
   }
 
-  merge() {
-    this.value *= 2;
+  merge(cell) {
+    this.value += cell.value;
+    cell.clear()
+  }
+
+  isSameTo(cell) {
+    return this.value == cell.value;
+  }
+
+  spawn() {
+    this.value = Math.random() > 0.5 ? 4 : 2;
+  }
+
+  get isEmpty(){
+    return this.value == 0;
   }
 }
