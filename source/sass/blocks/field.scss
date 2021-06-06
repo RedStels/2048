@@ -1,21 +1,84 @@
 .field {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10%;
   flex-wrap: wrap;
   background-color: white;
-  width: 50vw;
-  height: 100vh;
+  width: 100vh;
+  height: 50vh;
 }
 
 .cell {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 50px;
-  height: 20%;
-  width: 20%;
-  margin: 2%;
+  height: 16vh;
+  width: 16vh;
   background-color: white;
   border: 1px solid black;
   box-sizing: border-box;
   border-radius: 10px;
+
+}
+
+.cell.animate {
+  @include resetter;
+  position: absolute;
+  transition: left 0.2s, top 0.2s;
+  animation-name: fade;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.cell[cell-number="2"] {
+  background-color: #eee4da;
+}
+
+.cell[cell-number="4"] {
+  background-color: #ede0c8;
+}
+
+.cell[cell-number="8"] {
+  background-color: #fadfae;
+}
+
+.cell[cell-number="16"] {
+  background-color: #ffce72;
+}
+
+.cell[cell-number="32"] {
+  background-color: #fabf51;
+}
+
+.cell[cell-number="64"] {
+  background-color: #ffba82;
+}
+
+.cell[cell-number="128"] {
+  background-color: #ffad4f;
+}
+
+.cell[cell-number="256"] {
+  background-color: #ff8b5d;
+}
+
+.cell[cell-number="512"] {
+  background-color: #ff9684;
+}
+
+.cell[cell-number="1024"] {
+  background-color: #ff6123;
+}
+
+.cell[cell-number="2048"] {
+  background-color: #f55027;
+}
+
+.cell[cell-number="4096"] {
+  background-color: #ff4010;
 }

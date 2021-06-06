@@ -1,7 +1,6 @@
 "use strict";
-
-function createAndAppend({ className, parentElement, value, tag } = {className, parentElement, value, tag: "div",}
-) {
+//вспомогательная функция для использования в Классах
+function createAndAppend({ className, parentElement, value}, tag= "div") {
   let element = document.createElement(tag);
   element.className = className;
   if (value) {
@@ -11,4 +10,10 @@ function createAndAppend({ className, parentElement, value, tag } = {className, 
   return element;
 }
 
-new Game(document.body, 4);
+let getRandomInt = function(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let myGame = new Game(document.body, 4);
