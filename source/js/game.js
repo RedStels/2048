@@ -30,11 +30,7 @@ class Game {
     for (let i = 0; i < size; i++) {
       this.field[i] = [];
       for (let j = 0; j < size; j++) {
-<<<<<<< HEAD
         this.field[i][j] = new Cell(fieldElement, this);
-=======
-        this.field[i][j] = new Cell(fieldElement);
->>>>>>> refs/remotes/origin/master
       }
     }
 
@@ -58,13 +54,9 @@ class Game {
     console.log(this.field);
   }
 
-<<<<<<< HEAD
   addScore(value) {
     this.rating += value;
   }
-=======
-
->>>>>>> refs/remotes/origin/master
 
   spawnCell() {
     let epmtyCells = [];
@@ -79,7 +71,6 @@ class Game {
     if (epmtyCells.length) {
       epmtyCells[getRandomInt(0, epmtyCells.length - 1)].spawn();
     } else {
-<<<<<<< HEAD
       alert("You Lose");
     }
   }
@@ -94,12 +85,6 @@ class Game {
   }
 
 
-=======
-      alert("www");
-    }
-  }
-
->>>>>>> refs/remotes/origin/master
   moveRight() {
     let hasMove = false;
     for (let i = 0; i < this.size; i++) {

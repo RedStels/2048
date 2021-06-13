@@ -13,17 +13,9 @@ class Cell {
     });
 
 
-<<<<<<< HEAD
     if (Math.random() > 0.9) {
       this.spawn();
     }
-=======
-    if (Math.random() > 0.8) {
-      this.spawn();
-    }
-
-    // this.element.onclick = this.merge.bind(this);
->>>>>>> refs/remotes/origin/master
   }
 
   get value() {
@@ -42,7 +34,6 @@ class Cell {
   }
 
   merge(cell) {
-<<<<<<< HEAD
     if (this.value) {
       this.game.addScore(this.value + cell.value);
     }
@@ -51,9 +42,6 @@ class Cell {
 
     this.value += cell.value;
 
-=======
-    this.value += cell.value;
->>>>>>> refs/remotes/origin/master
     cell.clear()
   }
 
@@ -62,7 +50,6 @@ class Cell {
   }
 
   spawn() {
-<<<<<<< HEAD
     this.value = Math.random() > 0.5 ? 2 : 2;
   }
 
@@ -93,12 +80,5 @@ class AnimateCell {
 
     // toCell.element.offsetTop
     // toCell.element.offsetLeft
-=======
-    this.value = Math.random() > 0.5 ? 4 : 2;
-  }
-
-  get isEmpty(){
-    return this.value == 0;
->>>>>>> refs/remotes/origin/master
   }
 }
