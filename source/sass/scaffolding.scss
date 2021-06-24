@@ -30,7 +30,6 @@ img {
   overflow: hidden;
 }
 
-
 @keyframes fade {
   from {
     opacity: 1;
@@ -38,5 +37,15 @@ img {
 
   to {
     opacity: 0;
+  }
+}
+
+@keyframes popup {
+  from {
+    transform: translateY(-1000px);
+  }
+
+  to {
+    transform: translateY(0px);
   }
 }

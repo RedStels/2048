@@ -7,16 +7,16 @@ class Cell {
 
     this.fieldElement = fieldElement;
 
-    this.element = createAndAppend({
-      className: "cell",
-      parentElement: fieldElement
+    this.element = createAndAppend({ //Используем Вспомогательную функцию написанную вначале
+      className: "cell",             //Присваиваем класс для элемента
+      parentElement: fieldElement    //Присваиваем родительский элемент
     });
-
 
     if (Math.random() > 0.9) {
       this.spawn();
     }
   }
+
 
   get value() {
     return this.Value || 0;
@@ -38,7 +38,7 @@ class Cell {
       this.game.addScore(this.value + cell.value);
     }
 
-    new AnimateCell(cell, this);
+    new AnimateCell(cell, this); //Используем класс анимации клетки
 
     this.value += cell.value;
 
@@ -60,7 +60,7 @@ class Cell {
 }
 
 
-class AnimateCell {
+class AnimateCell {  //Создаем класс анимации
   constructor(fromCell, toCell) {
     this.element = fromCell.element.cloneNode(true);
     this.element.className = "cell animate";
@@ -77,8 +77,5 @@ class AnimateCell {
     setTimeout(function () {
       fromCell.fieldElement.removeChild(this.element);
     }.bind(this), 1000)
-
-    // toCell.element.offsetTop
-    // toCell.element.offsetLeft
   }
 }

@@ -1,8 +1,112 @@
-.game{
+.game {
   position: relative;
-  height: 100vh;
-  background-color: white;
+  background-color: #faf8ef;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
+
+
+.about {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5% 20%;
+  z-index: 1;
+  width: 60vw;
+  height: 60vh;
+  background-color: rgb(252, 83, 139);
+  border: 10px solid wheat;
+  border-radius: 15px;
+  animation: popup .4s ease-in-out forwards;
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    text-shadow: 2px 2px 2px black;
+  }
+}
+
+.about-icons {
+  position: relative;
+  align-self: center;
+  margin-top: 10%;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+  }
+}
+
+
+.lose {
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  button {
+     position: relative;
+     z-index: 1;
+     padding: 1.1rem 1.5rem;
+     font-size: 1.1rem;
+     border-radius: 100px;
+     border: none;
+     color: rgb(250, 250, 250);
+     cursor: pointer;
+     background: rgb(40, 212, 255);
+     }
+
+
+     button:focus {
+       outline: none;
+       transform: translateY(1px);
+     }
+     h3 {
+       position: relative;
+       top: -10%;
+     }
+  }
+
+
+span {
+  line-height: 0;
+  position: absolute;
+  right: 1rem;
+  top: 5rem;
+  font-size: 12rem;
+  color: black;
+  cursor: pointer;
+}
+
+// button {
+//   position: absolute;
+//   top: 10%;
+//   left: 5%;
+//   z-index: 10;
+//   padding: 1.1rem 1.5rem;
+//   font-size: 1.1rem;
+//   border-radius: 100px;
+//   border: none;
+//   color: rgb(4, 119, 46);
+//   cursor: pointer;
+//   background: lightgreen;
+// }
+
+
+// button:focus {
+//   outline: none;
+//   transform: translateY(1px);
+// }

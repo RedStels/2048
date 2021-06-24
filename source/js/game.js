@@ -1,7 +1,8 @@
 "use strict"
 
 //Создаём класс Game для отображения элементов без HTML
-class Game {
+
+class Game { //Создаем класс Game и передаем функцию хелпера для создания элементов на странице без HTML
   constructor(parentElement, size = 4) {
 
     this.size = size;
@@ -16,9 +17,12 @@ class Game {
       parentElement: gameFieldElement
     });
 
+    this.ratingElement = createAndAppend({
+      className: "rating",
+      parentElement: this.headerElement
+    });
+
     this.rating = 0;
-
-
 
     let fieldElement = createAndAppend({
       className: "field",
@@ -34,7 +38,7 @@ class Game {
       }
     }
 
-    window.onkeyup = function (event) {
+    let move = window.onkeyup = function (event) { //Используем конструкцию switch case для управления с клавиатуры
       switch (event.keyCode) {
         case 38:
           this.moveUp();
@@ -54,47 +58,46 @@ class Game {
     console.log(this.field);
   }
 
-  addScore(value) {
+  addScore(value) { //создаём метод для добавления очков игрока
     this.rating += value;
   }
 
-  spawnCell() {
+  spawnCell() { //создаём метод для генерации клетки в любую пустую ячейку
     let epmtyCells = [];
 
-    for (let i = 0; i < this.field.length; i++) {
+    for (let i = 0; i < this.field.length; i++) { //Проходим всё поле
       for (let j = 0; j < this.field[i].length; j++) {
         if (!this.field[i][j].value) { //Если это значение вовзращает ошибку, то помещаем это в emptyCells
-          epmtyCells.push(this.field[i][j]);
+          epmtyCells.push(this.field[i][j]); //Помещаем клетку в epmtyCells
         }
       }
     }
     if (epmtyCells.length) {
       epmtyCells[getRandomInt(0, epmtyCells.length - 1)].spawn();
     } else {
-      alert("You Lose");
+      showPopupLose();
     }
   }
 
   set rating(value) {
     this.Rating = value;
-    this.headerElement.innerHTML = "Rating: " + value;
+    this.ratingElement.innerHTML = "Очки: " + value;
   }
 
   get rating() {
     return this.Rating;
   }
 
-
-  moveRight() {
+  moveRight() { //создаём метод для управления
     let hasMove = false;
-    for (let i = 0; i < this.size; i++) {
-      for (let j = this.size - 2; j >= 0; j--) {
-        let currentCell = this.field[i][j];
-        if (currentCell.isEmpty) {
+    for (let i = 0; i < this.size; i++) { //Проходим все клетки слево на право
+      for (let j = this.size - 2; j >= 0; j--) { //До тех пор пока j >= 0
+        let currentCell = this.field[i][j]; //Объявляем и присваиваем текущую клетку из массива
+        if (currentCell.isEmpty) { //Берём ячейку, проверяем если она не пустая
           continue;
         }
 
-        let nextCellKey = j + 1;
+        let nextCellKey = j + 1; //Объевляем и присваиваем значение следующей клетке
         while (nextCellKey < this.size) {
 
           let nextCell = this.field[i][nextCellKey];
@@ -113,8 +116,8 @@ class Game {
           nextCell = this.field[i][nextCellKey];
         }
       }
-      if (hasMove) {
-        this.spawnCell();
+      if (hasMove) { //Проверяем было ли движение
+        this.spawnCell(); //Если условие сработало, вызываем метод для спавна клетки
       }
     }
 
