@@ -1,9 +1,0 @@
-@mixin resetter() {
-  padding: 0;
-  margin: 0;
-}
-
-@mixin fonts($size, $height) {
-  font-size: $size;
-  line-height: $height;
-}
