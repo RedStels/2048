@@ -4,4 +4,4 @@ Every turn, a new tile randomly appears in an empty spot on the board with a val
 Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. 
 If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. 
 The resulting tile cannot merge with another tile again in the same move. Higher-scoring tiles emit a soft glow the highest possible tile is 131,072.
-Please click here to play: https://redstels.github.io/2048/. If you want to contact me, this ny email: firstredstels@gmail.com. I will be glad to see your fitbacks :) 
+Please click here to play: https://redstels.github.io/2048/. If you want to contact me, this my email: firstredstels@gmail.com. I will be glad to see your fitbacks :) 
