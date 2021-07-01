@@ -1,5 +1,5 @@
 # Creating a project 2048 for a Orion Innovation.
-Please click here to play: https://redstels.github.io/2048/
+Please click here to play: https://redstels.github.io/2048/.
 2048 is played on a plain 4×4 grid, with numbered tiles that slide when a player moves them using the four arrow keys.
 Every turn, a new tile randomly appears in an empty spot on the board with a value of either 2 or 4. 
 Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. 
